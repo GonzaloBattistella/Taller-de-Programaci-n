@@ -65,7 +65,7 @@ end;
 var
   v: vector_genre;
 BEGIN
-	inicializarVectorListas(v); //Inicializao las listas en cada posicio del vector.
+  inicializarVectorListas(v); //Inicializo las listas en cada posicion del vector.
   cargarPeliculas(v); //Cargo las peliculas y las agrego a la lista correspondiente dentro del vector.
   imprimirVectorPeliculas(v); //Imprimo todas las peliculas del vector, que se encuetran agrupadas en una lista, y a su vez por genero dentro del vector.
 END.
