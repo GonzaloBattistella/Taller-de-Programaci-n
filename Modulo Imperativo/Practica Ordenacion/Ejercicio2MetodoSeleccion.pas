@@ -6,7 +6,7 @@ b. Ordene el vector, aplicando el método de inserción, por código de identifi
 c. Ordene el vector aplicando el método de selección, por código de identificación de la oficina.
 }
 
-program Ejercicio2MetodoInsercion;
+program Ejercicio2MetodoSeleccion;
 const
   dimF=300;
 type
@@ -54,24 +54,21 @@ begin
 end;
 
 
-//Proceso Ordenar Vector por método de Inserción. De menor a mayor.
-procedure ordenarVectorInsercion(var v:vector_ofi; var dimL:integer);
+//Proceso Ordenar Vector por método de Selección. De menor a mayor.
+procedure ordenarVectorSeleccion(var v:vector_ofi; var dimL:integer);
 var
-  i,j:integer;
-  act:oficina;
+  i,j,pos:integer;
+  item:oficina;
 begin
-  //Recorro los eleentos desde la posicion 2 del arreglo hasta la dimL.
-  for i:= 2 to dimL do begin
-    act:= v[i];
-    j:= i - 1;
+  for i:= 1 to dimL - 1 do begin
+    pos:= i;
+    for j:= i + 1 to dimL do
+      if(v[j].codigo < v[pos].codigo)then pos:= j;
     
-    //Hago los corrimientos correspondienes para ordenar los numeros en cada iteracion del bucle for de ser necesario.
-    while (j > 0) and (v[j].codigo > act.codigo)do begin
-      v[j + 1]:= v[j];
-      j:= j - 1;
-    end;
-    
-    v[j + 1]:= act;
+    //Intercambio los valores
+    item:= v[pos]; //Me guardo la oficina con menor codigo de identificacion.
+    v[pos]:= v[i];
+    v[i]:= item;
   end;
 end;
 
@@ -100,7 +97,6 @@ var
   dimL: integer;
 BEGIN
 	cargarOficinas(v,ofi,dimL);
-	ordenarVectorInsercion(v,dimL);
+	ordenarVectorSeleccion(v,dimL);
   imprimirVector(v,dimL);
 END.
-
