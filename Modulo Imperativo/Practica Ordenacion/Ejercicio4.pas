@@ -209,8 +209,8 @@ var
   v:v_rubros;
   dimL:integer;
 BEGIN
-	inicializarVectorRubros(v); //Inicializo los punteros de las listas de cada rubro en nil.
-	cargarProductos(v); //Leo y cargo llos prooductos ingresados por teclado.
+  inicializarVectorRubros(v); //Inicializo los punteros de las listas de cada rubro en nil.
+  cargarProductos(v); //Leo y cargo llos prooductos ingresados por teclado.
   imprimirCodigosRubros(v); //Imprimo los codigos de todos los productos de cada rubro.
   generarVectorRubro(vr, v, dimL); //Genero un vector con a lo sumo los primeros 30 productos del rubro 3.
   ordenarVectorR3(vr, dimL); //Ordeno el vector con los productos del rubro 3 por precio, a traves del metodo de Insercion.
