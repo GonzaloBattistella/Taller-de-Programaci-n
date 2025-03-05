@@ -47,6 +47,7 @@ begin
     writeln('Ingrese un numero: ');
     readln(num);
   end;
+  writeln(' ');
 end;
 
 //Proceso imprimirLista.
@@ -69,8 +70,8 @@ var
 begin
   if(l <> nil)then begin
     numero:= l^.dato;
-    writeln('--------------------------');
     imprimirNumero(numero);
+    writeln(' ');
     writeln('--------------------------');
     imprimirLista(l^.sig);
   end;
