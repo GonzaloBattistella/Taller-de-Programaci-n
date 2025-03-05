@@ -133,7 +133,7 @@ var
   dimL, cantCaracteres:integer;
   l:lista;
 BEGIN
-	cargarVector(v,dimL); //Cargo el vector con la secuencia de caracteres terminada en un '.'.
+  cargarVector(v,dimL); //Cargo el vector con la secuencia de caracteres terminada en un '.'.
   writeln(' ');
   imprimirVectorRecursivo(v,dimL); //Proceso para imprimir un vector, de manera recursiva.
   writeln(' ');
